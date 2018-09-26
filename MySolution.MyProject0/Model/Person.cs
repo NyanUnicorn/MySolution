@@ -17,7 +17,13 @@ namespace MySolution.MyProject0.Model
         ///     prénom de la personne
         /// </summary>
         private string firstName;
+        /// <summary>
+        ///     nom de la personne
+        /// </summary>
         private string lastName;
+        /// <summary>
+        ///     Date de naissance de la personne
+        /// </summary>
         private DateTime birthDdate;
 
         #endregion
@@ -27,7 +33,13 @@ namespace MySolution.MyProject0.Model
         ///     Obtien ou définit le prénom de la personne
         /// </summary>
         public string FirstName { get => firstName; set => firstName = value; }
+        /// <summary>
+        ///     Obtien ou définit le nom de la personne
+        /// </summary>
         public string LastName { get => lastName; set => lastName = value; }
+        /// <summary>
+        ///     Obtien ou définit le la date de naissance de la personne
+        /// </summary>
         public DateTime BirthDdate { get => birthDdate; set => birthDdate = value; }
 
         #endregion

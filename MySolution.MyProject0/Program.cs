@@ -11,8 +11,14 @@ namespace MySolution.MyProject0
     {
         #region Fiels
         private static bool exit = false;
+        /// <summary>
+        ///     Liste de principale de person(s) de cette appli
+        /// </summary>
         private static List<Person> People = new List<Person>();
         #endregion
+
+        #region Methods
+
 
         static void Main(string[] args) // méthode -- signature(ce qu'elle retourne / ses parametres)
         {
@@ -40,14 +46,10 @@ namespace MySolution.MyProject0
                         Console.WriteLine("Choix invalid");
                         break;
                 }
-                
+
             }
         }
 
-
-        #region Methods
-
-        
         /// <summary>
         ///     Afiche le menu
         /// </summary>
@@ -59,7 +61,7 @@ namespace MySolution.MyProject0
             Console.WriteLine("3 - Chercher");
             Console.WriteLine("0 - Quitter");
         }
-
+        
         /// <summary>
         ///     Displays info of given person
         /// </summary>
@@ -183,6 +185,9 @@ namespace MySolution.MyProject0
             }
         }
 
+        /// <summary>
+        ///     Permet à l'utilisateur de faire une recherche dans la liste People
+        /// </summary>
         private static void Recherch()
         {
             List<Person> searchList = new List<Person>();
@@ -192,7 +197,7 @@ namespace MySolution.MyProject0
 
             DateTime date;
             bool isDate = (DateTime.TryParse(search, out date) ? true : false);
-
+            /*
             foreach (Person person in People)
             {
                 if (person.FirstName.ToLower().Contains(search) || person.FirstName.ToLower().Contains(search))
@@ -204,6 +209,9 @@ namespace MySolution.MyProject0
                     searchList.Add(person);
                 }
             }
+            */
+            searchList = People.Where((person) => person.FirstName.ToLower().Contains(search) || person.LastName.ToLower().Contains(search)).ToList();
+            //           Methode.Filtre( (nomVariable) => condition ) ;
             ShowPeople(searchList);
         }
 
